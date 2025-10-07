@@ -19,8 +19,8 @@ export interface VerifyResponse {
   data?: any;
 }
 
-const ISSUANCE_SERVICE_URL = (import.meta as any).env?.VITE_ISSUANCE_SERVICE_URL || 'http://localhost:3000';
-const VERIFICATION_SERVICE_URL = (import.meta as any).env?.VITE_VERIFICATION_SERVICE_URL || 'http://localhost:3001';
+const ISSUANCE_SERVICE_URL = (import.meta as any).env?.VITE_ISSUANCE_SERVICE_URL || 'https://kube-certificate-microservice.onrender.com';
+const VERIFICATION_SERVICE_URL = (import.meta as any).env?.VITE_VERIFICATION_SERVICE_URL || 'https://kube-certificate-microservice-1.onrender.com';
 
 export const api = {
   issueCredential: async (credential: Credential): Promise<IssueResponse> => {
