@@ -50,7 +50,7 @@ export class CredentialService {
 
   private async syncWithVerificationService(credential: IssuedCredential): Promise<void> {
     try {
-      const verificationServiceUrl = process.env.VERIFICATION_SERVICE_URL || 'http://localhost:3001';
+      const verificationServiceUrl = process.env.VERIFICATION_SERVICE_URL || 'https://kube-certificate-microservice-1.onrender.com';
       await axios.post(`${verificationServiceUrl}/sync-credential`, {
         id: credential.id,
         data: credential.data,
