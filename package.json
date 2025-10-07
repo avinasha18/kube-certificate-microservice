@@ -1,0 +1,39 @@
+{
+  "name": "kube-credential",
+  "version": "1.0.0",
+  "description": "Production-grade credential issuance and verification system",
+  "scripts": {
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "install:backend": "cd backend/issuance-service && npm install && cd ../verification-service && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "build:all": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd backend/issuance-service && npm run build && cd ../verification-service && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "test:all": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend/issuance-service && npm test && cd ../verification-service && npm test",
+    "test:frontend": "cd frontend && npm run test",
+    "start:all": "npm run start:backend & npm run start:frontend",
+    "start:backend": "cd backend/issuance-service && npm run dev & cd ../verification-service && npm run dev",
+    "start:frontend": "cd frontend && npm run dev",
+    "docker:build": "docker compose build",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "k8s:deploy": "kubectl apply -f k8s/",
+    "k8s:delete": "kubectl delete -f k8s/",
+    "k8s:status": "kubectl get pods,services,ingress"
+  },
+  "keywords": [
+    "microservices",
+    "kubernetes",
+    "credentials",
+    "nodejs",
+    "react",
+    "typescript"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "prettier": "^3.0.3"
+  }
+}

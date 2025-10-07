@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: verification-service
+  labels:
+    app: verification
+spec:
+  selector:
+    app: verification
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3001
+      name: http
+  type: ClusterIP
