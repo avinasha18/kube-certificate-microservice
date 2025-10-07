@@ -2,6 +2,36 @@
 
 A production-grade microservice-based credential issuance and verification system built with Node.js, React, and Kubernetes.
 
+## 🎥 Demo Video
+
+**📹 [Watch the complete demo video here](https://www.loom.com/share/d1e2abf01963450cb3c7d83382bcc5b9?sid=73feea03-c088-4e53-84a3-8c317a5de9e4)**
+
+## 🌐 Live Deployment
+
+**✅ FULLY DEPLOYED AND WORKING:**
+
+- **Frontend**: [Your Vercel URL] (React/TypeScript)
+- **Issuance Service**: https://kube-certificate-microservice.onrender.com (Node.js/TypeScript)
+- **Verification Service**: https://kube-certificate-microservice-1.onrender.com (Node.js/TypeScript)
+
+### 🧪 Test the Live APIs:
+
+```bash
+# Test Issuance Service
+curl -X POST https://kube-certificate-microservice.onrender.com/issue \
+  -H "Content-Type: application/json" \
+  -d '{"id":"test-123","name":"Test User","email":"test@example.com"}'
+
+# Test Verification Service  
+curl -X POST https://kube-certificate-microservice-1.onrender.com/verify \
+  -H "Content-Type: application/json" \
+  -d '{"id":"test-123"}'
+
+# Health Checks
+curl https://kube-certificate-microservice.onrender.com/health
+curl https://kube-certificate-microservice-1.onrender.com/health
+```
+
 ## 🏗️ Architecture
 
 This application consists of three main components:
